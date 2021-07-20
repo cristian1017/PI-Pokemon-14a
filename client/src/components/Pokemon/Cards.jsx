@@ -45,14 +45,6 @@ export const Cards = () => {
   const indexOfFirstPoke = indexOfLastPoke - pokemonsForPage;
   const currentPokemons = pokes.slice(indexOfFirstPoke, indexOfLastPoke);
 
-  // Cambiar de página
-  const pagination = (numberPage) => setCurrentPage(numberPage)
-
-  //setea el estado propio de cards para poder manejar el filtrado modificando el mismo y no el store de redux
-  useEffect(() => {
-    setPokes([1, 2]);
-  }, []);
-
 
   //filtrado entre tipos de pokemon
   useEffect(() => {
@@ -103,15 +95,12 @@ export const Cards = () => {
 
   const HandleSiguiente = () => {
     const sig = setCurrentPage(currentPage +1)
-    if(sig === 4){
-      console.log('ERROR')
-    }
+    return sig;
+    
   }
   const HandleAnterior = () => {
-    const sig = setCurrentPage(currentPage - 1)
-    if(sig === 4){
-      console.log('ERROR')
-    }
+    const ant = setCurrentPage(currentPage - 1)
+    return ant;
   }
 
   return (
@@ -142,7 +131,6 @@ export const Cards = () => {
             className="button__next"
             onClick={HandleSiguiente}
             >NEXT
-            
             </button>
           </div>
         </div>

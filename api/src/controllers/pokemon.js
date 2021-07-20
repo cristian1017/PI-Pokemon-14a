@@ -1,13 +1,13 @@
 require('dotenv').config();
 const { response, request } = require('express');
 const { Pokemon, Tipo } = require('../db')
-const { v4: uuidv4 } = require('uuid');
 const { urls } = require('../helpers/types');
 const { API } = process.env;
 const axios = require("axios");
 
 let newId = 1000;
 let newData = [];
+
 const getPokemons = async (req = request, res = response) => {
     if (req.query.name) {
         const { name } = req.query;

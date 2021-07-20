@@ -16,15 +16,10 @@ export const DetailsCards = () => {
     useEffect(() => {
         const details = async () => {
             dispatch(getPokemonDetail(id))
-           console.log(id)
         }
         details()
-        console.log(`DETALLES : ${pokemonDetails}`)
     }, [dispatch, id])
 
-    useEffect(() => {
-        console.log(pokemonDetails)
-    }, [pokemonDetails])
 
     if (pokemonDetails) {
         return (

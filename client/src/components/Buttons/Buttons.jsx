@@ -16,7 +16,6 @@ export const Buttons = () =>  {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(state.selected);
     dispatch(selectType(state.selected));
   };
 
@@ -37,8 +36,6 @@ export const Buttons = () =>  {
   }
 
   return (
-    //CREAR OPCION DOBLE (ORIGINALES O CREADOS) //INVESITGAR COMO HACER EL SWITCH COMPONENT
-    //ESTA DOBLE OPCION DEBE CAMBIAR EN EL STORE EL CREATED X TRUE O FALSE
     <div className="container__button">
       <button onClick={(e) => handleOrder(e, 'pred')}>Predeterminado</button>
       <button onClick={(e) => handleOrder(e, 'alfaAsc')}>A-Z</button>
