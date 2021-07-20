@@ -12,7 +12,7 @@ const pokemon = {
 describe('Pokemon routes', () => {
   before(() => conn.authenticate()
   .catch((err) => {
-    console.error('Unable to connect to the database:', err);
+    console.error('No se puede conectar a la base de datos:', err);
   }));
   beforeEach(() => Pokemon.sync({ force: true })
     .then(() => Pokemon.create(pokemon)));
