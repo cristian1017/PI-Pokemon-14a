@@ -1,13 +1,14 @@
 require('dotenv').config();
 const { response, request } = require('express');
-const { Pokemon } = require('../db')
+const { Pokemon, Tipo } = require('../db')
 const { v4: uuidv4 } = require('uuid');
 const { urls } = require('../helpers/types');
 const { API } = process.env;
 const axios = require("axios");
 
+let newId = 1000;
+let newData = [];
 const getPokemons = async (req = request, res = response) => {
-    let newData = [];
     if (req.query.name) {
         const { name } = req.query;
 
@@ -46,10 +47,10 @@ const getPokemons = async (req = request, res = response) => {
                     let poke = axios.get(
                         `${API}/${i}`
                     );
-
                     newData.push(poke);
+                    console.log(newData)
                 } catch (error) {
-                    console.log(error)
+                    console.log('no se pudo guardar')
                 }
             }
         }
@@ -64,12 +65,13 @@ const getPokemons = async (req = request, res = response) => {
                     return { name: t.type.name, image: typesprite?.url };
                 }),
             };
-            return poke
+            return poke;
         }));
     }
 }
 const getPokemonID = async (req = request, res = response) => {
     const { id } = req.params;
+    console.log(id)
 
     try {
 
@@ -93,31 +95,43 @@ const getPokemonID = async (req = request, res = response) => {
         };
         res.json(detail);
     } catch (error) {
+        const pokemon = await Pokemon.findOne({
+            where: { id },
+            include: [
+                {
+                    model: Tipo,
+                    as: 'tipos',
+                    attributes: ["name"],
+                    through: { attributes: [] },
+                },
+            ],
+        });
+        if (!pokemon) return res.send('Not Found')
         res.json({
             ok: false,
             msg: 'ERROR, no se encontro pokemon'
         })
     }
 
-    
+
 }
 
 const addPokemon = async (req = request, res = response) => {
     const { name, hp, strength, defense, speed, height, weight, tipo1, tipo2 } = req.body;
-    const tipos = [parseInt(tipo1),parseInt(tipo2)]
-    const id = uuidv4()
+    const tipos = [parseInt(tipo1), parseInt(tipo2)]
+    const randomIMG = Math.round(Math.random() * 1000);
 
     const newPokemon = await Pokemon.create({
-        id: id,
+        id: newId++,
         name,
         hp: hp,
         strength: strength,
-        defense:defense,
+        defense: defense,
         speed: speed,
         height: height,
         weight: weight,
-        img:'https://assets.pokemon.com/assets/cms2/img/pokedex/full/725.png'
-      });
+        img: `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${randomIMG}.png`
+    });
     try {
         newPokemon.setTipos(tipos)
     } catch (error) {
@@ -129,18 +143,18 @@ const addPokemon = async (req = request, res = response) => {
     res.status(200).json(newPokemon);
 }
 
-const getPokemonAdd = async(req = request, res = response) => {
+const getPokemonAdd = async (req = request, res = response) => {
     const pokemonCreated = await Pokemon.findAll({
         include: [
-          {
-            model: Tipo,
-            as:'tipos',
-            attributes: ["name","image"],
-            through: { attributes: [] }
-          },
+            {
+                model: Tipo,
+                as: 'tipos',
+                attributes: ["name", "image"],
+                through: { attributes: [] }
+            },
         ]
-      })
-      res.json(pokemonCreated)
+    })
+    res.json(pokemonCreated)
 }
 
 module.exports = {

@@ -1,0 +1,40 @@
+.containerSearch{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 20px;
+}
+
+
+input {
+    font-size: 20px;
+    box-sizing: border-box;
+}
+.containerSearch__text{
+    background: #FCFB3B;
+    font-family: "VT323", monospace;
+    color: black;
+    width: 250px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding: 0 25px;
+    border-radius: 25px 0 0 25px;
+}
+
+.containerSearch__submit {
+    border-radius: 0 25px 25px 0;
+    font-family: "VT323", monospace;
+    width: 100px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #ffc107;
+}
+
+.containerSearch__card{
+    display: grid;
+    margin: 0px;
+    justify-content: center;
+}

@@ -1,0 +1,21 @@
+
+.mainNav {
+    
+    background: yellow;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.mainNav__img-home{
+    width: 60px;
+    margin-left: 150px;
+}
+.mainNav__img-pokemon{
+    height:  60px;
+    width: 200px;
+}
+
+.mainNav__img-create{
+    width: 60px;
+    margin-right: 150px;
+}

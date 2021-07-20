@@ -1,0 +1,73 @@
+.containerScreen {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "VT323", monospace;
+    font-size: 70px;
+    color: gradiente;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    .buttonIngresar {
+        height: 40px;
+        margin: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        
+        input {
+            height: 100%;
+            width: 30%;
+            outline: none;
+            border-radius: 30px;
+            border: none;
+            font-family: "VT323", monospace;
+            cursor: pointer;
+            font-size: 30px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            background: linear-gradient(-100deg, red, white, yellow);
+
+            
+        }
+        input:hover {
+            background: linear-gradient(100deg, red, white, yellow);
+        }
+        
+    }
+}
+.containerScreen__title{
+    display: flex;
+    justify-content: center;
+    .letra1{
+        color: red;
+    }
+    .letra2{
+        color: green;
+    }
+    .letra3{
+        color: orange;
+    }
+    .letra4{
+        color: purple;
+    }
+    .letra5{
+        color: rgb(6, 49, 241);
+    }
+    .letra6{
+        color: rgb(255, 0, 179);
+    }
+    .letra7{
+        color: rgb(255, 251, 0);
+    }
+    .letra8{
+        color: rgb(0, 255, 213);
+    }
+    .letra9{
+        color: rgb(166, 255, 0);
+    }
+    .letra10{
+        color: white;
+    }
+}

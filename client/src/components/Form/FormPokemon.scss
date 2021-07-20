@@ -1,0 +1,131 @@
+.containerForm {
+    position: relative;
+    background: transparent;
+    font-family: "VT323", monospace;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+}
+.form {
+    position: relative;
+    width: 40%;
+    height: 71%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, red, white, yellow);
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+.form__title {
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+}
+.form__title::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    background: black;
+    left: 0;
+    bottom: 0;
+}
+.form__details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+    .form__input-box {
+        margin-bottom: 15px;
+        width: calc(100% / 2 - 20px);
+    }
+    input {
+        height: 45px;
+        width: 100%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding-left: 15px;
+        font-size: 16px;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+    }
+    input:focus {
+        border-color: red;
+    }
+
+    .detail {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+}
+
+.form_input-boxName {
+    width: 100%;
+    margin-top: 15px;
+    .inputName {
+        height: 45px;
+        width: 100%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding-left: 15px;
+        font-size: 16px;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+    }
+    .inputName:focus {
+        border-color: red;
+    }
+}
+::placeholder {
+    font-family: "VT323", monospace;
+    font-size: 20px;
+}
+.form__select {
+    width: 100%;
+    display: flex;
+    .form__select-box {
+        width: 40%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-family: "VT323", monospace;
+        padding-left: 15px;
+        font-size: 20px;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+        background: white;
+        margin-right: 10px;
+    }
+
+    .form__select-box:focus {
+        border-color: red;
+    }
+}
+.buttonCrear {
+    height: 40px;
+    margin: 10px;
+    width: 100%;
+    input {
+        height: 100%;
+        width: 100%;
+        outline: none;
+        border-radius: 30px;
+        border: none;
+        font-family: "VT323", monospace;
+        cursor: pointer;
+        font-size: 30px;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+    input:hover {
+        background: linear-gradient(-100deg, red, white, yellow);
+    }
+}

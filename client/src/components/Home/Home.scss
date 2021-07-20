@@ -1,0 +1,17 @@
+
+.mainHome__container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.mainHome__container-search {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.mainHome__container-cards{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+}

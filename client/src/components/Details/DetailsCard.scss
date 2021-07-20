@@ -1,0 +1,111 @@
+
+.mainDetailCard__container {
+    position: relative;
+    width: auto;
+    height: 400px;
+    margin: 5px;
+    padding: 0.5rem;
+    font-family: "VT323", monospace;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+
+}
+.mainDetailCard__container-card {
+    margin-top: 15rem;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110vh;
+    background: linear-gradient(red, white, yellow);
+    border: black  solid;
+    height: 25rem;
+    width:20rem;
+}
+.container__card-img {
+    position: absolute;
+    margin: 1px;
+    bottom: 15rem;
+    max-width: 15rem;
+    height: auto;
+}
+
+.container__card-content {
+    position: relative;
+    div {
+        display: flex;
+        flex-direction: column;
+        h1{
+            display: flex;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 2px 0px -2rem 0px;
+        }
+        .content__id {
+            position:'relative';
+            bottom:4rem; 
+            font-size:2rem;
+            color:rgb(245, 237, 237);
+            display: flex;
+            justify-content: center;
+            margin: 1.5;
+
+        }
+        div {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 18rem;
+            border-bottom: dashed 1px black;
+            span {
+                font-size: 1.4rem;
+                margin: 0;
+                font-family: "VT323", monospace;
+            }
+            div {
+                padding: 0px;
+                span {
+                    margin: 5px 15px;
+                    padding: 5px 0px;
+                    font-size: 1.4rem;
+                    font-family: "VT323", monospace;
+                }
+            }
+            
+        }
+        span {
+            margin-top: 1rem;
+            font-size: 1.4rem;
+        }
+        .content__title-type{
+            color: black;
+            display: flex;
+            justify-content: center;
+        }
+        .content__types {
+            display: flex;
+            justify-content: space-around;
+            border:none;
+            margin: 1rem 0rem 0rem 0rem;
+            .content__types-type{
+                display: flex;
+                flex-direction: column;
+                width: auto;
+                .imgType {
+                    position: relative;
+                    display: grid;
+                    justify-content: center;
+                    left: 0px;
+                    top: 0;
+                    padding: 0;
+                    width: 3rem;
+                    border-end-end-radius: 0.3rem;
+                }
+            }
+        }
+    }
+}
