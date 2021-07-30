@@ -5,19 +5,19 @@
 # Proyecto Individual - Henry Pokemon
 
 <p align="left">
-  <img height="150" src="./portada.png" />
+  <img height="300" width="100%" src="./portada.png" />
 </p>
 
 <p align="left">
-  <img height="150" src="./home.png" />
+  <img height="310" width="100%" src="./home.png" />
 </p>
 
 <p align="left">
-  <img height="150" src="./search.png" />
+  <img height="310" width="100%" src="./search.png" />
 </p>
 
 <p align="left">
-  <img height="150" src="./create.png" />
+  <img height="310" width="100%" src="./create.png" />
 </p>
 
 
