@@ -82,6 +82,14 @@ export const Cards = () => {
           a.strength < b.strength ? 1 : a.strength > b.strength ? -1 : 0
         )
       );
+    else if(filterOther === "MaxVida"){
+      console.log(pokes)
+      return setPokes(
+        [...pokes].sort((a,b) => 
+        a.defense < b.defense ? 1 : a.defense > b.defense ? -1 : 0
+      ))
+
+    }
     else
       return setPokes(
         [...pokes].sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0))

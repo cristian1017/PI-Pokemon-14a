@@ -17,10 +17,12 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+require('dotenv').config();
 const axios = require("axios");
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const { precharge } = require('./src/helpers/rechargeDB.js');
+
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {

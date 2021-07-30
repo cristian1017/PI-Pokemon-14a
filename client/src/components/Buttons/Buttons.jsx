@@ -42,6 +42,7 @@ export const Buttons = () =>  {
       <button onClick={(e) => handleOrder(e, 'alfaDsc')}>Z-A</button>
       <button onClick={(e) => handleOrder(e, 'MenFu')}>Menor Fuerza</button>
       <button onClick={(e) => handleOrder(e, 'MaxFu')}>Mayor Fuerza</button>
+      <button onClick={(e) => handleOrder(e, 'MaxVida')}>Mayor Vida</button>
       <button onClick={(e) => handleCreated(e, false)}>Originales</button>
       <button onClick={(e) => handleCreated(e, true)}>Creados</button>
       <form onSubmit={handleSubmit}>

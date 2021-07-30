@@ -13,6 +13,7 @@ export const Search = () => {
     const { data } = await axios.get(
       `http://localhost:3001/pokemons?name=${state.search}`
     );
+    
     console.log(data);
     setState({ ...state, submit: data });
   };

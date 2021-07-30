@@ -23,6 +23,17 @@ const getPokemons = async (req = request, res = response) => {
                     return { name: t.type.name, image: typesprite?.url };
                 }),
             };
+            const pokemonFound = await Pokemon.findOne({
+                where: { name },
+                include: [
+                    {
+                        model: Tipo,
+                        as: 'tipos',
+                        attributes: ["name", "image"],
+                        through: { attributes: [] }
+                    },
+                ],
+            });
             res.json(detail);
         } catch (error) {
             const pokemonFound = await Pokemon.findOne({
@@ -60,6 +71,7 @@ const getPokemons = async (req = request, res = response) => {
                 name: data.name,
                 img: data.sprites.front_default,
                 strength: data.stats[1].base_stat,
+                defense: data.stats[2].base_stat,
                 tipos: data.types.map((t) => {
                     typesprite = urls?.find((u) => u.name === t.type.name);
                     return { name: t.type.name, image: typesprite?.url };
@@ -106,11 +118,12 @@ const getPokemonID = async (req = request, res = response) => {
                 },
             ],
         });
+        const resp = pokemon.dataValues
+        console.log(pokemon.dataValues)
         if (!pokemon) return res.send('Not Found')
-        res.json({
-            ok: false,
-            msg: 'ERROR, no se encontro pokemon'
-        })
+        res.json(
+            resp
+        )
     }
 
 
